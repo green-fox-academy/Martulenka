@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+}
+
+.headerImage {
+    background-image: url("assets/anakin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    height: 402px;
+    width: 100%;
+  }
+
+.flexBoxHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 402px;
+    justify-content: flex-end;
+}
+
+.headerText{
+    font-family: 'Abril Fatface', cursive;
+    width: 700px;
+    color:rgb(24, 24, 24);
+}
+
+.flexBoxContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content{
+    font-family: 'Josefin Sans', sans-serif;;
+    font-size: 20px;
+    line-height: 1.3;
+    width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h1{
+    font-size: 70px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+h3{
+    padding-bottom: 20px;
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+h4{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+
+h5{
+    padding-bottom: 20px;
+}
+
+blockquote {
+    color: white;
+    font-size: 50px;
+    quotes: "“" "”";
+    font-family: 'Abril Fatface', cursive;
+    padding-bottom: 20px;
+  }
+
+  blockquote::before {
+      content: open-quote;
+      font-size: 80px;
+      position: relative;
+      left: 0px;
+      top: -20px;
+  }
+
+  .quote {
+    background-color: rgb(75, 75, 75);
+    width: 780px;
+  }
+
+  hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-top: solid;
+  }

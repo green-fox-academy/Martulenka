@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+    
+        <meta charset="utf-8"/>
+        <meta name="keywords" content="Martina Hudeckova">
+        <meta name="description" content="Martina's Blog">
+        <title>Martina's Blog</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+        <script>
+            var darkOne = false;
+
+            function darkScheme()
+            {
+                document.getElementById("MyHeader").style.backgroundColor = "black";
+                document.getElementById("MyBody").style.backgroundColor = "rgb(48, 48, 48)";
+                darkOne = true;
+            }
+            function lightScheme()
+            {
+                document.getElementById("MyHeader").style.backgroundColor = "darkgoldenrod";
+                document.getElementById("MyBody").style.backgroundColor = "cornsilk";
+                darkOne = false;
+            }
+
+            function switchScheme()
+            {
+                if(darkOne === false)
+                {
+                    document.getElementById("MyHeader").style.backgroundColor = "black";
+                    document.getElementById("MyBody").style.backgroundColor = "rgb(48, 48, 48)";
+                    darkOne = true;
+                }
+                else
+                {
+                    document.getElementById("MyHeader").style.backgroundColor = "darkgoldenrod";
+                    document.getElementById("MyBody").style.backgroundColor = "cornsilk";
+                    darkOne = false;
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header id=MyHeader>
+            <h1>The Blog</h1> 
+        </header>
+
+        <main id=MyBody>
+            <br>
+            <button onclick="darkScheme()">Dark</button>
+            <button onclick="lightScheme()">Light</button>
+            <button onclick="switchScheme()">Switch</button><br><br>
+
+                <form>
+                    <label>Title</label><br>
+                    <input type = "text" id="PostTitle" name= "PostTitle"><br>
+                    <label>Content</label><br>
+                    <textarea style="resize:none"></textarea><br>
+                    <input type = "submit" value= "Submit">
+                </form>
+
+            <h2>Posts</h2> 
+
+            <div>
+                <h3>The Night Circus</h3>
+                <p>Someone needs to tell those tales. When the battles are fought and won and lost, when the pirates find their treasures and the dragons eat their foes for breakfast with a nice cup of Lapsang souchong, someone needs to tell their bits of overlapping narrative. There's magic in that. It's in the listener, and for each and every ear it will be different, and it will affect them in ways they can never predict. From the mundane to the profound. You may tell a tale that takes up residence in someone's soul, becomes their blood and self and purpose. That tale will move them and drive them and who knows what they might do because of it, because of your words.</p>
+            </div>
+
+            <div>
+                <h3>The Starless Sea</h3>
+                <p>Once, very long ago, Time fell in love with Fate. This, as you might imagine, proved problematic. Their romance disrupted the flow of time. It tangled the strings of fortune into knots.
+                The stars watched from the heavens nervously, worrying what might occur. What might happen to the days and nights were time to suffer a broken heart? What catastrophes might result if the same fate awaited Fate itself? The stars conspired and separated the two. For a while they breathed easier in the heavens. Time continued to flow as it always had, or perhaps imperceptibly slower. Fate weaved together the paths that were meant to intertwine, though perhaps a string was missed here and there. But eventually, Fate and Time found each other again.
+                In the heavens, the stars sighed, twinkling and fretting. They asked the Moon her advice. The Moon in turn called upon the parliament of owls to decide how best to proceed. The parliament of owls convened to discuss the matter amongst themselves night after night. They argued and debated while the world slept around them, and the world continued to turn, unaware that such important matters were under discussion while it slumbered.  The parliament of owls came to the logical conclusion that if the problem was in the combination, one of the elements should be removed. They chose to keep the one they felt more important. The parliament of owls told their decision to the stars and the stars agreed. The Moon did not, but on this night she was dark and could not offer her opinion.
+                So it was decided, and Fate was pulled apart. Ripped into pieces by beaks and claws. Fate’s screams echoed through the deepest corners and the highest heavens but no one dared to intervene save for a small brave mouse who snuck into the fray, creeping unnoticed through the blood and bone and feathers, and took Fate’s heart and kept it safe.
+                When the furor died down there was nothing else left of Fate.  The owl who consumed Fate’s eyes gained great site, greater site then any that had been granted to a mortal creature before. The Parliament crowned him the Owl King.
+                In the heavens the stars sparkled with relief but the moon was full of sorrow. And so time goes as it should and events that were once fated to happen are left instead to chance, and Chance never falls in love with anything for long.
+                But the world is strange and endings are not truly endings no matter how the stars might wish it so.
+                Occasionally Fate can pull itself together again.  And Time is always waiting.</p>
+            </div>
+
+        </main>  
+    </body>
+</html>

@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    line-height: 1.5;
+}
+
+header{
+    background-color: darkgoldenrod;
+    color:cornsilk;
+    padding-left: 10%;
+}
+
+main{
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: cornsilk;
+    color: darkgoldenrod;
+    font-family: consolas;
+}
+
+div{
+    border-style: solid;
+    border-color: darkgoldenrod;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-width: thin; 
+}
+
+textarea{
+    width: 100%;
+    height: 80px;
+    border-color: darkgoldenrod;
+    outline-color:peru;
+}
+
+input {
+    border-color: darkgoldenrod;
+    outline-color:peru;
+    border-style: solid;
+    border-width: thin; 
+}
+
+input[type=submit] {
+    border-radius: 4px;
+}
