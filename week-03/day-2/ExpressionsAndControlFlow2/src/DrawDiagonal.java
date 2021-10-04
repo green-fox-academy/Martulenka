@@ -18,8 +18,7 @@ public class DrawDiagonal {
         System.out.print("Enter number of lines: ");
         int lineCount = scanner.nextInt();
 
-        int spaceCount = lineCount-2;
-
+        /*int spaceCount = lineCount-2;
         for(int i = 1;i<=lineCount;i++){
             System.out.print("%"); //first column
             for(int j=1; j<=spaceCount;j++){ //sandwiched columns
@@ -31,7 +30,17 @@ public class DrawDiagonal {
             }
             System.out.print("%"); //last column
             System.out.println("");
-        }
+        }*/
 
+        for(int i=0;i<lineCount;i++){
+            for (int j=0;j<lineCount;j++){
+                if(i==0 || j==0 || i==j || i== lineCount-1 || j==lineCount-1){
+                    System.out.print("%");
+                }else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("\n"); //or System.out.println("");
+        }
     }
 }

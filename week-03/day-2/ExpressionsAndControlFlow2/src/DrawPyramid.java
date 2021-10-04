@@ -1,6 +1,6 @@
 public class DrawPyramid {
     public static void main(String[] args) {
-        int lineCount = 4;
+        int lineCount = 5;
 
         // Write a program that draws a pyramid like this:
         //
@@ -18,17 +18,15 @@ public class DrawPyramid {
     public static void drawPyramid(int lineCount) {
         // write your code here for Gradescope testing
 
-        String stars;
-        for(int i=1;i<=lineCount;i++){
-            stars = "";
-            for(int j=0;j< lineCount-i;j++){
-                stars = stars + " ";
+        for(int i=0;i<lineCount;i++){
+            for(int j=0;j< lineCount-i-1;j++){
+                System.out.print(" ");
             }
-            for(int k=0;k<2*i-1;k++){
-                stars = stars + "*";
+            for(int k=0;k<2*(i+1)-1;k++){
+                System.out.print("*");
             }
 
-            System.out.println(stars);
+            System.out.println("");
         }
     }
 }
