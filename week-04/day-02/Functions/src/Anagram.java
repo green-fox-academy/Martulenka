@@ -24,11 +24,15 @@ public class Anagram {
     static boolean isAnagram(String word1, String word2){
 
         char[] word1Array = word1.toLowerCase().toCharArray();
+
         Arrays.sort(word1Array);
+
         String sortedString1 = new String(word1Array).trim();
 
         char[] word2Array = word2.toLowerCase().toCharArray();
+
         Arrays.sort(word2Array);
+
         String sortedString2 = new String(word2Array).trim();
 
         return sortedString1.equals(sortedString2);

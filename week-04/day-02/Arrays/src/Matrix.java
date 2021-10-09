@@ -17,6 +17,7 @@ public class Matrix {
         int userMatrixLength = 6;
 
         int[][] matrix;
+
         matrix = new int[userMatrixLength][userMatrixLength];
 
         for(int i=0;i<matrix.length;i++){

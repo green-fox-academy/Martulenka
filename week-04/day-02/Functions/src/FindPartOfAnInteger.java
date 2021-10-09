@@ -16,10 +16,13 @@ public class FindPartOfAnInteger {
         // You could just as well iterate over the array and print its items one by one
 
         int[] searchedArrays = {1, 11, 34, 52, 61};
+
         int findNumber = 1;
+
         System.out.println(Arrays.toString(findMatchingIndexes(findNumber,searchedArrays)));
 
         findNumber = 9;
+
         System.out.println(Arrays.toString(findMatchingIndexes(findNumber,searchedArrays)));
     }
 
@@ -32,7 +35,9 @@ public class FindPartOfAnInteger {
                  foundArrayLength++;
              }
         }
+
         int[] foundArray = new int[foundArrayLength];
+
         int j = 0;
 
         for (int i = 0; i < searchedArray.length; i++) {
@@ -41,6 +46,7 @@ public class FindPartOfAnInteger {
                 j++;
             }
         }
+
         return foundArray;
     }
 }

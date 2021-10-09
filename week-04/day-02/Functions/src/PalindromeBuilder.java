@@ -15,11 +15,13 @@ public class PalindromeBuilder {
 
     public static void main(String[] args) {
         String stringToPalindrome = "greenfox";
+
         System.out.println(createPalindrome(stringToPalindrome));
     }
 
     static String createPalindrome(String inputString) {
         StringBuilder sb = new StringBuilder(inputString).reverse();
+
         return inputString.concat(sb.toString());
     }
 }

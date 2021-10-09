@@ -10,6 +10,7 @@ public class Unique {
         //  should print: `[1, 11, 34, 52, 61]`
 
         int[] notSoUniqueArray = {1, 11, 34, 11, 52, 61, 1, 34};
+
         System.out.println(Arrays.toString(findUniqueItems(notSoUniqueArray)));
     }
 

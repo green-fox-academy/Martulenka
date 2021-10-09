@@ -15,11 +15,13 @@ public class PalindromeSearcher {
     //""	[]
     public static void main(String[] args) {
         String palindromeToBe = "racecar";
+
         System.out.println(Arrays.toString(searchPalindrome(palindromeToBe)));
     }
 
     public static String[] searchPalindrome(String inputString) {
         String reverseString;
+
         List<String> palindromesList = new ArrayList<>();
 
         for (int i = 0; i < inputString.length(); i++) {
@@ -30,8 +32,11 @@ public class PalindromeSearcher {
                 }
             }
         }
+
         String[] palindromesArray = new String[palindromesList.size()];
+
         palindromesArray = palindromesList.toArray(palindromesArray);
+
         return palindromesArray;
     }
 }

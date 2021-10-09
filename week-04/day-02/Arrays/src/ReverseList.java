@@ -8,12 +8,14 @@ public class ReverseList {
         int[] numbers = {3, 4, 5, 6, 7};
 
         int numbersPlaceholder;
+
         for (int i = 0; i < numbers.length; i++) {
             if(i<numbers.length-1-i){
-            numbersPlaceholder = numbers[i];
-            numbers[i] = numbers[numbers.length-1-i];
-            numbers[numbers.length-1-i] = numbersPlaceholder;
+                numbersPlaceholder = numbers[i];
+                numbers[i] = numbers[numbers.length-1-i];
+                numbers[numbers.length-1-i] = numbersPlaceholder;
             }
+
             System.out.println(numbers[i]);
         }
     }
