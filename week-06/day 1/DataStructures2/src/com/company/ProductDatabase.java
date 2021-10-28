@@ -35,8 +35,8 @@ public class ProductDatabase {
         for (Map.Entry<String, Integer> entry : productsMap.entrySet()) {
             if(previousAmount < entry.getValue()){
                 maxProduct = entry.getKey();
+                previousAmount = entry.getValue();
             }
-            previousAmount = entry.getValue();
         }
 
         System.out.println("What is the most expensive product? " + maxProduct);
@@ -73,12 +73,12 @@ public class ProductDatabase {
 
         //What is the cheapest product?
         String minProduct = "";
-        previousAmount = 0;
+        previousAmount = 5000;
         for (Map.Entry<String, Integer> entry : productsMap.entrySet()) {
             if(previousAmount > entry.getValue()){
                 minProduct = entry.getKey();
+                previousAmount = entry.getValue();
             }
-            previousAmount = entry.getValue();
         }
 
         System.out.println("What is the cheapest product? " + minProduct);
