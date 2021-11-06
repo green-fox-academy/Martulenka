@@ -41,11 +41,11 @@ public class Doubled {
                 outputLine = "";
             }
             Files.write(targetPath, outputContent);
-            outputMessage = "File encrypted.";
+            outputMessage = "File decrypted.";
         } catch (IOException exception){
             outputMessage = "File not found";
         }
-        
+
         return outputMessage;
     }
 }
