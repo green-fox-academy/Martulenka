@@ -33,7 +33,7 @@ public class WriteMultipleLines {    public static void main(String[] args) {
 
         try {
             Files.write(path, linesToWrite);
-        }catch (IOException exception){
+        } catch (IOException exception){
             System.out.println("Not able to modify the file.");
         }
 
