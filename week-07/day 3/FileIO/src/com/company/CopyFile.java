@@ -15,7 +15,7 @@ public class CopyFile {
         //  - path and name of the target file
         // It should return a boolean that shows if the copy was successful
 
-        if (WriteNameToFile("src/com/company/save_files/sourceFile.txt","src/com/company/save_files/targetFile.txt")){
+        if (WriteNameToFile("src/com/company/CopyFile/sourceFile.txt","src/com/company/CopyFile/targetFile.txt")){
             System.out.println("File copied successfully.");
         }else {
             System.out.println("File not copied.");
