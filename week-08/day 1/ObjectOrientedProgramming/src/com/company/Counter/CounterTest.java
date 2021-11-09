@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Counter;
 
 import org.junit.jupiter.api.Test;
 

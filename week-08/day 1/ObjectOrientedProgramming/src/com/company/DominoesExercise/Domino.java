@@ -1,7 +1,5 @@
-package com.company;
+package com.company.DominoesExercise;
 
-
-import java.util.Arrays;
 
 public class Domino {
     private final int left;

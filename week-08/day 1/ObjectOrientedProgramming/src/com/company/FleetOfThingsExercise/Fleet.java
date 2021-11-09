@@ -1,4 +1,4 @@
-package com.company;
+package com.company.FleetOfThingsExercise;
 
 import java.util.ArrayList;
 

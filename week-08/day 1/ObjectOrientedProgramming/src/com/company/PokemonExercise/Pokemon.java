@@ -1,4 +1,4 @@
-package com.company;
+package com.company.PokemonExercise;
 
 public class Pokemon {
     String name;
