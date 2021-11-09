@@ -21,8 +21,8 @@ public class Main {
         System.out.print("I choose you, " );
 
         for (int i = 0; i < initializePokemons().size(); i++) {
-            if(initializePokemons().get(i).isEffectiveAgainst(wildPokemon)){
-                System.out.println(initializePokemons().get(i).name);
+            if(pokemonListOfAsh.get(i).isEffectiveAgainst(wildPokemon)){
+                System.out.println(pokemonListOfAsh.get(i).name);
                 break;
             }
         }
