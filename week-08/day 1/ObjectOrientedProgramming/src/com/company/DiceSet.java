@@ -40,7 +40,7 @@ public class DiceSet {
         // Your task is to roll the dice until all of the dice are 6
 
         DiceSet diceSet = new DiceSet();
-        
+
         /*System.out.println(diceSet.getCurrentSet());
         System.out.println(diceSet.rollSet());
         System.out.println(diceSet.getCurrentSet());
