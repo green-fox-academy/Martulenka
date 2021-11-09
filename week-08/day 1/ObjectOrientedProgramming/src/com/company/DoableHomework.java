@@ -19,7 +19,7 @@ public class DoableHomework {
         List<String> pine = new ArrayList<>(Arrays.asList("coniferous","green","15","F"));
         List<String> maple = new ArrayList<>(Arrays.asList("deciduous","red","20","M"));
         List<String> willow = new ArrayList<>(Arrays.asList("deciduous","yellow","8","F"));
-        
+
     }
 }
 
