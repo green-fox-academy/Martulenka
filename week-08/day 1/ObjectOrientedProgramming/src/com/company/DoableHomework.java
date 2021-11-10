@@ -14,11 +14,11 @@ public class DoableHomework {
         sex
     you can use just variables, or lists and/or maps*/
 
-        List<String> birch = new ArrayList<>(Arrays.asList("deciduous","yellow","10","F"));
-        List<String> oak = new ArrayList<>(Arrays.asList("deciduous","orange","25","M"));
-        List<String> pine = new ArrayList<>(Arrays.asList("coniferous","green","15","F"));
-        List<String> maple = new ArrayList<>(Arrays.asList("deciduous","red","20","M"));
-        List<String> willow = new ArrayList<>(Arrays.asList("deciduous","yellow","8","F"));
+        List<String> birch = new ArrayList<>(Arrays.asList("deciduous","yellow","10","monecious"));
+        List<String> oak = new ArrayList<>(Arrays.asList("deciduous","orange","25","monecious"));
+        List<String> pine = new ArrayList<>(Arrays.asList("coniferous","green","15","monecious"));
+        List<String> maple = new ArrayList<>(Arrays.asList("deciduous","red","20","polygamous"));
+        List<String> willow = new ArrayList<>(Arrays.asList("deciduous","yellow","8","dioecious"));
 
     }
 }
