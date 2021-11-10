@@ -11,6 +11,13 @@ public class Animal {
 
     int hunger = 50;
     int thirst = 50;
+    String name;
+    String type;
+
+    public Animal(String name, String type){
+        this.name = name;
+        this.type = type;
+    }
 
 
     public void eat() {
@@ -24,19 +31,5 @@ public class Animal {
     public void play() {
         this.hunger ++;
         this.thirst ++;
-    }
-
-    public static void main(String[] args) {
-
-        Animal dog = new Animal();
-
-        dog.play();
-        dog.eat();
-        dog.drink();
-        dog.eat();
-        dog.play();
-
-        System.out.println("Hunger: " + dog.hunger + "\nThirst: " + dog.thirst);
-
     }
 }
