@@ -15,8 +15,8 @@ public class Station {
     void refill(Car car){
         if (car.gasAmount < car.tankCapacity){
             System.out.println("refueling...");
-            this.gasAmount -= car.tankCapacity - car.gasAmount;
-            car.gasAmount += car.tankCapacity - car.gasAmount;
+            this.gasAmount -= car.tankCapacity;
+            car.gasAmount = car.tankCapacity;
         }
     }
 }
