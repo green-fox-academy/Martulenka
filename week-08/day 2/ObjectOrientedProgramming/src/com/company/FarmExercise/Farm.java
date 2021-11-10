@@ -20,7 +20,7 @@ public class Farm {
         this.farmAnimals = farmAnimals;
     }
 
-    public static void breed(Animal newAnimal, List<Animal> farmAnimals){
+    public void breed(Animal newAnimal){
         if(farmAnimals.size() < 10){
             farmAnimals.add(newAnimal);
         }else{
@@ -28,7 +28,7 @@ public class Farm {
         }
     }
 
-    public static void sell(List<Animal> farmAnimals){
+    public void sell(){
         int indexOfLeastHungry = 0;
 
         for (int i = 0; i < farmAnimals.size(); i++) {

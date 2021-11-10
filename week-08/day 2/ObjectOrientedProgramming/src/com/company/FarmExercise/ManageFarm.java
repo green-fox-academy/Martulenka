@@ -10,13 +10,15 @@ public class ManageFarm {
 
         List<Animal> listOfAnimals = new ArrayList<>();
 
-        Farm.breed(new Animal("Bessie","cow"),listOfAnimals);
-        Farm.breed(new Animal("Buttercup", "cow"),listOfAnimals);
-        Farm.breed(new Animal("Duke", "bull"),listOfAnimals);
-        Farm.breed(new Animal("Cupcake", "sheep"),listOfAnimals);
-        Farm.breed(new Animal("Cottonball", "sheep"),listOfAnimals);
-        Farm.breed(new Animal("Snowflake", "sheep"),listOfAnimals);
-        Farm.breed(new Animal("Ramsey", "ram"),listOfAnimals);
+        Farm myFarm = new Farm(listOfAnimals);
+
+        myFarm.breed(new Animal("Bessie","cow"));
+        myFarm.breed(new Animal("Buttercup", "cow"));
+        myFarm.breed(new Animal("Duke", "bull"));
+        myFarm.breed(new Animal("Cupcake", "sheep"));
+        myFarm.breed(new Animal("Cottonball", "sheep"));
+        myFarm.breed(new Animal("Snowflake", "sheep"));
+        myFarm.breed(new Animal("Ramsey", "ram"));
 
         listOfAnimals.get(0).play();
         listOfAnimals.get(1).play();
@@ -32,11 +34,11 @@ public class ManageFarm {
             listOfAnimals.get(i).drink();
         }
 
-        Farm.breed(new Animal("Curry", "goat"),listOfAnimals);
-        Farm.breed(new Animal("Capricorn", "goat"),listOfAnimals);
-        Farm.breed(new Animal("Lamby", "sheep"),listOfAnimals);
-        Farm.breed(new Animal("Mittens", "sheep"),listOfAnimals);
+        myFarm.breed(new Animal("Curry", "goat"));
+        myFarm.breed(new Animal("Capricorn", "goat"));
+        myFarm.breed(new Animal("Lamby", "sheep"));
+        myFarm.breed(new Animal("Mittens", "sheep"));
 
-        Farm.sell(listOfAnimals);
+        myFarm.sell();
     }
 }
