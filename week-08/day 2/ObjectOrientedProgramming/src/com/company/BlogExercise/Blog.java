@@ -16,9 +16,6 @@ public class Blog {
 
     List<BlogPost> listOfPosts = new ArrayList<>();
 
-    public Blog (){
-    }
-
     public void add (BlogPost newPost){
         listOfPosts.add(newPost);
         System.out.println("New Post: " + newPost.blogPostTitle);

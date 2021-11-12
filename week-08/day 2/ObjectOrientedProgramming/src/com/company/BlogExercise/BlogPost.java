@@ -26,4 +26,5 @@ public class BlogPost {
         this.blogPostText = blogPostText;
         this.blogPostTitle = blogPostTitle;
     }
+
 }
