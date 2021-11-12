@@ -1,4 +1,4 @@
-package com.company.SharpieSetExercise;
+package com.company.SharpieSet;
 
 public class Sharpie {
     /*Create a Sharpie class

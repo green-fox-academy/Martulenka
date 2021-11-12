@@ -1,6 +1,4 @@
-package com.company.BlogExercise;
-
-import com.company.FarmExercise.Animal;
+package com.company.Blog;
 
 import java.util.ArrayList;
 import java.util.List;

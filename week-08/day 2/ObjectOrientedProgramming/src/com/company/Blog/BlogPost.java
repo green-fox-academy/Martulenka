@@ -1,4 +1,4 @@
-package com.company.BlogExercise;
+package com.company.Blog;
 
 public class BlogPost {
     /*Create a BlogPost class that has

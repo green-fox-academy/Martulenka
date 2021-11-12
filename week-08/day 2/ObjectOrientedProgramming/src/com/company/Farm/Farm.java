@@ -1,6 +1,4 @@
-package com.company.FarmExercise;
-
-import com.company.SharpieSetExercise.Sharpie;
+package com.company.Farm;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.company.FarmExercise;
+package com.company.Farm;
 
 public class Animal {
     /*Create an Animal class

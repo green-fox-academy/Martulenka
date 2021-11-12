@@ -1,4 +1,4 @@
-package com.company.SharpieSetExercise;
+package com.company.SharpieSet;
 
 import java.util.ArrayList;
 import java.util.List;
