@@ -1,4 +1,4 @@
-package com.company.ParkingLotExercise;
+package com.company.ParkingLot;
 
 import java.util.ArrayList;
 import java.util.HashMap;

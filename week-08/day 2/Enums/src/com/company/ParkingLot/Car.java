@@ -1,4 +1,4 @@
-package com.company.ParkingLotExercise;
+package com.company.ParkingLot;
 
 public class Car {
         /*Create a Car class with 2 enum properties
