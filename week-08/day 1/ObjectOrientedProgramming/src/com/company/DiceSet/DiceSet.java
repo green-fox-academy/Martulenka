@@ -1,7 +1,6 @@
-package com.company;
+package com.company.DiceSet;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DiceSet {

@@ -1,4 +1,4 @@
-package com.company.DominoesExercise;
+package com.company.Dominoes;
 
 import java.util.ArrayList;
 import java.util.Arrays;

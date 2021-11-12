@@ -1,4 +1,4 @@
-package com.company.PokemonExercise;
+package com.company.Pokemon;
 
 import java.util.ArrayList;
 import java.util.List;

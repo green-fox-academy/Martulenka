@@ -1,4 +1,4 @@
-package com.company.PetrolStationExercise;
+package com.company.PetrolStation;
 
 public class PetrolStation {
     public static void main(String[] args) {

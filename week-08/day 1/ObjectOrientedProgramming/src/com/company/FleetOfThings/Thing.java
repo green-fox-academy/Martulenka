@@ -1,4 +1,4 @@
-package com.company.FleetOfThingsExercise;
+package com.company.FleetOfThings;
 
 /**
  * Created by aze on 2017.03.29..

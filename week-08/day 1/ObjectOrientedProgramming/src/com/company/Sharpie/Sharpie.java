@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Sharpie;
 
 public class Sharpie {
     /*Create a Sharpie class

@@ -1,4 +1,4 @@
-package com.company.DominoesExercise;
+package com.company.Dominoes;
 
 
 public class Domino {

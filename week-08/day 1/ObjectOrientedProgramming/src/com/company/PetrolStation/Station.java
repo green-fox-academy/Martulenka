@@ -1,4 +1,4 @@
-package com.company.PetrolStationExercise;
+package com.company.PetrolStation;
 
 public class Station {
     /*it stores how much gas is available: gasAmount
