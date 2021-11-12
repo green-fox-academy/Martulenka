@@ -26,7 +26,6 @@ public class Counter {
     int initialValue = 0;
 
     public Counter (){
-        this(0);
     }
 
     public Counter (int counter){
