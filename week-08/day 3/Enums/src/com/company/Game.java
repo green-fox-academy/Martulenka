@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
         /*Create the beloved Twenty Plus One game!
@@ -25,9 +26,43 @@ public class Game {
 
         List<Card> playersDeck = new ArrayList<>();
 
-        new Deck(playersDeck);
+        new Deck(playersDeck).ShuffleDeck();
+
+        List<Card> drawnCards = new ArrayList<>();
+
+        drawnCards.add(Deck.PullRandom(playersDeck));
+        drawnCards.add(Deck.PullRandom(playersDeck));
+
+        int playerScore = drawnCards.get(0).cardRank.value + drawnCards.get(1).cardRank.value;
+
+        System.out.println("Your cards are: " + drawnCards.get(0).cardRank + " of " + drawnCards.get(0).cardSuit + " and " + drawnCards.get(1).cardRank + " of " + drawnCards.get(1).cardSuit + " which is worth " + playerScore + " points.");
+
+        String response = "y";
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to draw another card? (y/n)");
+        response = scanner.nextLine();
+
+        while (response.contains("y")) {
+            drawnCards.add(Deck.PullRandom(playersDeck));
+            playerScore += drawnCards.get(drawnCards.size() - 1).cardRank.value;
+            System.out.println("Your card is: " + drawnCards.get(drawnCards.size() - 1).cardRank + " of " + drawnCards.get(0).cardSuit + ". Your score is now " + playerScore + " points.");
 
 
+            System.out.println("Would you like to draw another card? (y/n)");
+            response = scanner.nextLine();
+
+        }
+
+        int opponentsScore = opponentsScore();
+
+        if (playerScore > 21 || playerScore < opponentsScore) {
+            System.out.println("You lose! Your opponent has " + opponentsScore + " points.");
+        }else if (playerScore == opponentsScore){
+            System.out.println("It is a draw. Your opponent has the same number of points: " + opponentsScore);
+        }else {
+            System.out.println("You win! Your opponent has " + opponentsScore + " points.");
+        }
 
     }
 

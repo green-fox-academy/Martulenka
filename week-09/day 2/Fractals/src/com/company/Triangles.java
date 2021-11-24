@@ -29,7 +29,7 @@ public class Triangles {
         }
 
     }
-    
+
 
     // Don't touch the code below
     static int WIDTH = 320;

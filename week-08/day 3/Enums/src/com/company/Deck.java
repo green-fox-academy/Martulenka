@@ -26,16 +26,16 @@ public class Deck {
         Collections.shuffle(this.cardDeck);
     }
 
-    public Card PullFirst(){
-        return this.cardDeck.get(0);
+    public static Card PullFirst(List<Card> cardDeck){
+        return cardDeck.get(0);
     }
 
-    public Card PullLast(){
-        return this.cardDeck.get(cardDeck.size()-1);
+    public static Card PullLast(List<Card> cardDeck){
+        return cardDeck.get(cardDeck.size()-1);
     }
 
-    public Card PullRandom(){
-        return this.cardDeck.get((int)Math.floor(Math.random()*(cardDeck.size()-1)+1));
+    public static Card PullRandom(List<Card> cardDeck){
+        return cardDeck.get((int)Math.floor(Math.random()*(cardDeck.size()-1)+1));
     }
 
 }
