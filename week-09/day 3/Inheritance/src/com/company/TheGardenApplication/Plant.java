@@ -2,10 +2,10 @@ package com.company.TheGardenApplication;
 
 public class Plant {
 
-    private String plantName;
-    private int waterLevel;
+    String plantName;
+    double waterLevel;
     private int waterAbsorption;
-    private int waterNeedLevel;
+    int waterNeedLevel;
 
     Plant(String plantColor, int waterAbsorption, int waterNeedLevel){
         this.plantName = plantColor;
@@ -15,15 +15,8 @@ public class Plant {
     }
 
     public void water(int waterAmount){
-        waterLevel = waterLevel + (waterAmount)*(int)(waterAbsorption/100.0);
-        info();
+        waterLevel = waterLevel + (waterAmount)*(waterAbsorption/100.0);
+
     }
 
-    public void info(){
-        if(waterLevel < waterNeedLevel){
-            System.out.println("The " + plantName + " needs water");
-        }else{
-            System.out.println("The " + plantName + " doesnt need water");
-        }
-    }
 }

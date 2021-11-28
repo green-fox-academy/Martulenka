@@ -1,38 +1,20 @@
 package com.company.TheGardenApplication;
 
-import com.company.GFInheritanceExercise.Mentor;
-import com.company.GFInheritanceExercise.Person;
-import com.company.GFInheritanceExercise.Sponsor;
-import com.company.GFInheritanceExercise.Student;
-
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Plant> plants = new ArrayList<>();
 
-        Plant yellowFlower = new Flower("yellow");
-        plants.add(yellowFlower);
-        Plant blueFlower = new Flower("blue");
-        plants.add(blueFlower);
-        Plant purpleTree = new Tree("purple");
-        plants.add(purpleTree);
-        Plant orangeTree = new Tree("orange");
-        plants.add(orangeTree);
+        Garden secretGarden = new Garden("SecretGarden");
 
-        for (int i = 0; i < plants.size(); i++) {
-            plants.get(i).info();
-        }
+        secretGarden.addFlower(new Flower("yellow"));
+        secretGarden.addFlower(new Flower("blue"));
+        secretGarden.addTree(new Tree("purple"));
+        secretGarden.addTree(new Tree("orange"));
 
-        System.out.println("Watering with 40");
-        for (int i = 0; i < plants.size(); i++) {
-            plants.get(i).water(40/plants.size());
-        }
+        secretGarden.info();
 
-        System.out.println("Watering with 70");
-        for (int i = 0; i < plants.size(); i++) {
-            plants.get(i).water(70/plants.size());
-        }
+        secretGarden.waterGarden(40);
+
+        secretGarden.waterGarden(70);
 
     }
 }

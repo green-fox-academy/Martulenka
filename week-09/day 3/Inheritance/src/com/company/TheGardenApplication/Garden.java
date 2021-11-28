@@ -15,21 +15,37 @@ public class Garden {
      */
 
     String name;
-    private List<Flower> flowers;
-    private List<Tree> trees;
+    private List<Plant> plants;
 
     public Garden(String name) {
         this.name = name;
-        this.flowers = new ArrayList<>();
-        this.trees = new ArrayList<>();
+        this.plants = new ArrayList<>();
     }
 
     public void addFlower(Flower flower) {
-        flowers.add(flower);
+        plants.add(flower);
     }
 
     public void addTree(Tree tree) {
-        trees.add(tree);
+        plants.add(tree);
+    }
+
+    public void info(){
+        for (int i = 0; i < plants.size(); i++) {
+            if(plants.get(i).waterLevel < plants.get(i).waterNeedLevel){
+                System.out.println("The " + plants.get(i).plantName + " needs water");
+            }else{
+                System.out.println("The " + plants.get(i).plantName  + " doesnt need water");
+            }
+        }
+    }
+
+    public void waterGarden(int waterAmount){
+        System.out.println("Watering with " + waterAmount);
+        for (int i = 0; i < plants.size(); i++) {
+        plants.get(i).water(waterAmount/plants.size());
+        }
+        info();
     }
 
 }
