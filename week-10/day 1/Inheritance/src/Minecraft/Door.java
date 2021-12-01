@@ -29,7 +29,7 @@ public class Door extends Block{
 
     @Override
     public void printStatus(){
-        System.out.println("Block of type: Window\nHas light transmission: " + lightTransmission + "\nCan be crossed.\nManufactured by " + producerName + " on quality level " + quality);
+        System.out.println("Block of type: door\nHas light transmission: " + lightTransmission + "\nCan be crossed.\nManufactured by " + producerName + " on quality level " + quality);
     }
 
 }

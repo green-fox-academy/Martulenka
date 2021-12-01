@@ -46,6 +46,10 @@ Prints the most important properties of the block.
         return lightTransmission;
     }
 
+    public String getType(){
+        return type;
+    }
+
     public void printStatus(){
 
         System.out.println("Block of type: " + type + "\nHas light transmission: " + lightTransmission);
@@ -56,4 +60,8 @@ Prints the most important properties of the block.
             System.out.println("Can not be crossed. ");
         }
     }
+
+    public Block transferBlock(Block previousBlock){return previousBlock;
+    }
+
 }

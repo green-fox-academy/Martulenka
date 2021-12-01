@@ -16,19 +16,33 @@ public class GlowStone extends Block {
     Made no transformation / Has transformed a block of type ... to ...
      */
 
+    private String transferredType = "";
+
     public GlowStone(){
 
         super("glowStone", "white", 300, false, "glass,ice,air,lava");
     }
 
-    public void printStatus(String previousType){
+    @Override
+    public void printStatus(){
 
-        System.out.println("Block of type: Ice\nHas light transmission: 97\nCan not be crossed.");
+        System.out.println("Block of type: glowStone\nHas light transmission: 97\nCan not be crossed.");
 
-        if(previousType.contains("glass")){
+        if(transferredType.contains("glass")){
             System.out.println("Has transformed a block of type glass to gold");
         }else{
             System.out.println("Made no transformation");
+        }
+    }
+
+    @Override
+    public Block transferBlock(Block previousBlock){
+        if(previousBlock.getType() == "glass"){
+            Gold gold = new Gold(160);
+            transferredType = "glass";
+            return gold;
+        }else {
+        return previousBlock;
         }
     }
 

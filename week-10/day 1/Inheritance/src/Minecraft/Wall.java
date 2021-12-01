@@ -1,5 +1,6 @@
 package Minecraft;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Wall {
@@ -14,16 +15,27 @@ public class Wall {
     a calculateLightTransmission() method that returns the percentage (integer between 0 and 100) of the light that passes through the wall. This percentage is the average of the light transmission values of the blocks in the wall.
      */
 
-    private List<Block> wall;
+    private List<Block> wall = new ArrayList<>();
+    private Block transferredBlock;
 
     public void placeBlock(Block block){
-        if(block.canPlaceAfter(wall.get(wall.size()-1))){
+        if(wall.size() > 0){
+            if(block.canPlaceAfter(wall.get(wall.size()-1))){
+                wall.add(block);
+                transferredBlock = block.transferBlock(wall.get(wall.size()-2));
+                if(transferredBlock.getType() != wall.get(wall.size()-2).getType()){
+                    wall.set(wall.size()-2,transferredBlock);
+                }
+            }
+        }else {
             wall.add(block);
         }
+
     }
 
     public void printStatus(){
         for(Block b : wall){
+            System.out.println("-------------");
             b.printStatus();
         }
     }

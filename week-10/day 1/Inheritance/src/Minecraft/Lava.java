@@ -15,21 +15,38 @@ public class Lava extends Block{
     Can not be crossed.
     Made no transformation / Has transformed a block of type ... to ...
      */
+    private String transferredType = "";
 
     public Lava (){
         super("lava", "yellow", 170, false, "mud,brick,glass,ice,air,glowStone");
     }
 
-    public void printStatus(String previousType){
+    @Override
+    public void printStatus(){
 
-        System.out.println("Block of type: Ice\nHas light transmission: 97\nCan not be crossed.");
+        System.out.println("Block of type: lava\nHas light transmission: 97\nCan not be crossed.");
 
-        if(previousType.contains("mud")){
+        if(transferredType.contains("mud")){
             System.out.println("Has transformed a block of type mud to brick");
-        }else if (previousType.contains("ice")){
+        }else if (transferredType.contains("ice")){
             System.out.println("Has transformed a block of type ice to air");
         }else{
             System.out.println("Made no transformation");
+        }
+    }
+
+    @Override
+    public Block transferBlock(Block previousBlock) {
+        if (previousBlock.getType() == "mud") {
+            Brick brick = new Brick();
+            transferredType = "mud";
+            return brick;
+        }else if(previousBlock.getType() == "ice"){
+            Air air = new Air();
+            transferredType = "ice";
+            return air;
+        }else {
+            return previousBlock;
         }
     }
 

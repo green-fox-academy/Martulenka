@@ -31,7 +31,7 @@ public class Window extends Block{
 
     @Override
     public void printStatus(){
-        System.out.println("Block of type: Window\nHas light transmission: " + lightTransmission);
+        System.out.println("Block of type: window\nHas light transmission: " + lightTransmission);
         if(canBeCrossed){
             System.out.println("Can be crossed.");
         }else {
