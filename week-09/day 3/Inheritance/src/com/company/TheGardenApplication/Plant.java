@@ -1,22 +1,45 @@
 package com.company.TheGardenApplication;
 
-public class Plant {
+public abstract class Plant {
 
-    String plantName;
-    double waterLevel;
+    private String plantName;
+    private double waterLevel;
     private int waterAbsorption;
-    int waterNeedLevel;
+    private int waterNeedLevel;
 
-    Plant(String plantColor, int waterAbsorption, int waterNeedLevel){
-        this.plantName = plantColor;
+    Plant(String plantName, int waterAbsorption, int waterNeedLevel){
+        this.plantName = plantName;
         this.waterLevel = 0;
         this.waterAbsorption = waterAbsorption;
         this.waterNeedLevel = waterNeedLevel;
     }
 
-    public void water(int waterAmount){
-        waterLevel = waterLevel + (waterAmount)*(waterAbsorption/100.0);
+    public void getPlantInfo(){
+        if(waterLevel< waterNeedLevel){
+            System.out.println("The " + plantName + " needs water");
+        }else{
+            System.out.println("The " + plantName  + " doesn't need water");
+        }
+    }
 
+    public void water(int waterAmount){
+        waterLevel = waterLevel + waterAmount * (waterAbsorption/100.0);
+    }
+
+    public String getPlantName() {
+        return plantName;
+    }
+
+    public double getWaterLevel() {
+        return waterLevel;
+    }
+
+    public int getWaterAbsorption(){
+        return waterAbsorption;
+    }
+
+    public int getWaterNeedLevel() {
+        return waterNeedLevel;
     }
 
 }

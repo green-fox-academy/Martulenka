@@ -8,8 +8,6 @@ public class Tree extends Plant{
     eg. watering with 10 the tree's amount of water should only increase by 4
      */
 
-    private String color;
-
     Tree(String color){
         super(color + " Tree", 40, 10);
     }

@@ -1,13 +1,10 @@
 package com.company.TheGardenApplication;
 
-import com.company.GFInheritanceExercise.Mentor;
-import com.company.GFInheritanceExercise.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
-        /*
+    /*
     The Garden
     is able to hold unlimited amount of flowers and trees
     when watering it should only water those plants that need water with equally divided amount amongst them
@@ -31,20 +28,18 @@ public class Garden {
     }
 
     public void info(){
-        for (int i = 0; i < plants.size(); i++) {
-            if(plants.get(i).waterLevel < plants.get(i).waterNeedLevel){
-                System.out.println("The " + plants.get(i).plantName + " needs water");
-            }else{
-                System.out.println("The " + plants.get(i).plantName  + " doesnt need water");
-            }
+        for (Plant plant : plants) {
+            plant.getPlantInfo();
         }
     }
 
     public void waterGarden(int waterAmount){
-        System.out.println("Watering with " + waterAmount);
-        for (int i = 0; i < plants.size(); i++) {
-        plants.get(i).water(waterAmount/plants.size());
+        System.out.println("---\nWatering with " + waterAmount);
+
+        for (Plant plant : plants) {
+            plant.water(waterAmount/plants.size());
         }
+
         info();
     }
 

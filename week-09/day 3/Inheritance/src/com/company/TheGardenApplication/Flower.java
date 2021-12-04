@@ -8,8 +8,6 @@ public class Flower extends Plant {
     eg. watering with 10 the flower's amount of water should only increase by 7.5
      */
 
-    private String color;
-
     Flower(String color){
         super(color + " Flower",75, 5);
     }
