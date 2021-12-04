@@ -1,6 +1,6 @@
 package com.company.Cloneable;
 
-public class Student extends Person {
+public class Student extends Person implements Cloneable{
     /*Create a Student class that has the same fields and methods as the Person class, and has the following additional
 
     fields:
@@ -42,12 +42,9 @@ public class Student extends Person {
         this.skippedDays += numberOfDays;
     }
 
-    @Override
-    public Student clone(){
-        Student clone = new Student(super.name, super.age, super.gender, previousOrganization);
-        clone.skippedDays = skippedDays;
 
-        return clone;
+    public Object clone()throws CloneNotSupportedException{
+        return super.clone();
     }
 
 }

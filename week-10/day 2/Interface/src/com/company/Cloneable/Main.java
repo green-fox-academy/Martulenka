@@ -13,8 +13,14 @@ public class Main {
 
         Student john = new Student("John", 20, "male", "BME");
 
-        Student jonhTheClone = john.clone();
+        john.skipDays(3);
 
+        try{
+        Student jonhTheClone = (Student)john.clone();
         jonhTheClone.introduce();
+
+        }catch(CloneNotSupportedException c){}
+
+
     }
 }
