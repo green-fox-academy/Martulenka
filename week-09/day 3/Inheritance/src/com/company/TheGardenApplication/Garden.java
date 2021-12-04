@@ -11,12 +11,12 @@ public class Garden {
     eg. watering with 40 and 4 of them need water then each gets watered with 10
      */
 
-    String name;
+    private String name;
     private List<Plant> plants;
 
     public Garden(String name) {
         this.name = name;
-        this.plants = new ArrayList<>();
+        plants = new ArrayList<>();
     }
 
     public void addFlower(Flower flower) {
@@ -36,8 +36,17 @@ public class Garden {
     public void waterGarden(int waterAmount){
         System.out.println("---\nWatering with " + waterAmount);
 
+        int needWater = 0;
+
         for (Plant plant : plants) {
-            plant.water(waterAmount/plants.size());
+            if(plant.getIfNeedsWater()){
+                needWater++;
+            }
+        }
+
+        for (Plant plant : plants) {
+            if(plant.getIfNeedsWater())
+            plant.water(waterAmount/needWater);
         }
 
         info();

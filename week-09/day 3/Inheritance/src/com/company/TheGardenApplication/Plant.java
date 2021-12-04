@@ -14,6 +14,14 @@ public abstract class Plant {
         this.waterNeedLevel = waterNeedLevel;
     }
 
+    public boolean getIfNeedsWater(){
+        if(waterLevel< waterNeedLevel){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public void getPlantInfo(){
         if(waterLevel< waterNeedLevel){
             System.out.println("The " + plantName + " needs water");
