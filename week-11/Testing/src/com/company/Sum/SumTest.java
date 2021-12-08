@@ -16,7 +16,7 @@ class SumTest {
         s.addValue(1);
         s.addValue(2);
         s.addValue(3);
-        
+
         assertEquals(6,s.getSum());
     }
 
