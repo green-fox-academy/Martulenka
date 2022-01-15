@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+body {
+    background-color: #F6F7F8;
+}
+
+form {
+    color: #5D6063;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color: #FFFFFF;
+    padding: 2% 5% 2% 5%;
+    border: 1px solid #D6D9DC;
+}
+
+td{
+    vertical-align: middle;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+button{
+    border-style: none;
+    color: #FFFFFF;
+    background-color: #009973;
+    padding: 10px;
+    width: 150px;
+    margin: 30px 0 10px 0;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+input{
+    padding: 30px 10px 10px 10px;
+    border: 0;
+    border-bottom: 1px solid #D6D9DC;
+}
+
+input:focus{
+    outline-style: none;
+    border-bottom: 2px solid #009973;
+}
+
+a{
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.fb{
+    background-color: #4267b2;
+    width: 250px;
+}
+
+.twitter{
+    background-color: #1DA1F2;
+    width: 250px;
+}
+
+.google{
+    background-color: #DB4437;
+    width: 250px;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #e0e0eb;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+}
