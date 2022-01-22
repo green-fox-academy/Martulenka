@@ -4,7 +4,6 @@ import com.example.bankofsimba.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,15 +12,37 @@ import java.util.List;
 public class BankController {
 
     private List<BankAccount> accountList = new ArrayList<>();
+    BankAccount simbasAccount;
 
     public BankController() {
-        accountList.add(new BankAccount("Simba", 2000, "lion"));
+        simbasAccount = new BankAccount("Simba", 2000, "lion");
+        accountList.add(simbasAccount);
+
+        accountList.add(new BankAccount("Nala", 3000, "lion"));
+        accountList.add(new BankAccount("Timon", 500, "meerkat"));
+        accountList.add(new BankAccount("Pumbaa", 2000, "warthog"));
+        accountList.add(new BankAccount("Scar", 4000, "lion"));
+        accountList.add(new BankAccount("Rafiki", 8000, "mandrill"));
+
     }
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String showBooks(Model model) {
-        model.addAttribute("accounts", accountList);
-        return "index";
+    @RequestMapping("/show")
+    public String showAccount(Model model) {
+        model.addAttribute("account", simbasAccount);
+        return "one-account";
     }
+
+    @RequestMapping("/HTMLception")
+    public String writeHTMLception(Model model) {
+        model.addAttribute("insertText","This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+        return "HTMLception";
+    }
+
+    @RequestMapping("/show-list")
+    public String showAccounts(Model model) {
+        model.addAttribute("accounts", accountList);
+        return "account-list";
+    }
+
 
 }
