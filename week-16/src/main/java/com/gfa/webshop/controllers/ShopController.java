@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class ShopController {
@@ -31,6 +32,14 @@ public class ShopController {
     @RequestMapping("/")
     public String home(Model model){
         model.addAttribute("shopItems", shopInventory);
+        return "index";
+    }
+
+    @RequestMapping("/only-available")
+    public String onlyAvailable(Model model){
+        model.addAttribute("shopItems", shopInventory.stream()
+                .filter(shopItem -> shopItem.getQuantityInStock()>0)
+                .collect(Collectors.toList()));
         return "index";
     }
 
