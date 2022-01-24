@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +40,22 @@ public class ShopController {
     public String onlyAvailable(Model model){
         model.addAttribute("shopItems", shopInventory.stream()
                 .filter(shopItem -> shopItem.getQuantityInStock()>0)
+                .collect(Collectors.toList()));
+        return "index";
+    }
+
+    @RequestMapping("/cheapest-first")
+    public String cheapestFirst(Model model){
+        model.addAttribute("shopItems", shopInventory.stream()
+                .sorted(Comparator.comparingInt(ShopItem::getPrice))
+                .collect(Collectors.toList()));
+        return "index";
+    }
+
+    @RequestMapping("/contains-nike")
+    public String containsNike(Model model){
+        model.addAttribute("shopItems", shopInventory.stream()
+                .filter(shopItem -> shopItem.getName().toLowerCase().contains("nike") || shopItem.getDescription().toLowerCase().contains("nike"))
                 .collect(Collectors.toList()));
         return "index";
     }
