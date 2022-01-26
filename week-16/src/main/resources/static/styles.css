@@ -5,7 +5,7 @@
 
 body {
     font-family: "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #ffffff;
     padding: 10px;
     margin: 10px 20%;
@@ -76,4 +76,35 @@ th {
     background-color: #00334d;
     text-align: left;
     color: white;
+}
+
+.searchBar {
+    overflow: hidden;
+    margin: 10px 20px;
+}
+
+.searchBar input[type=text] {
+    float: left;
+    padding: 10px;
+    border: 1px solid #00334d;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+button {
+    background-color: #006699;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+button:hover{
+    background-color: #00334d;
 }

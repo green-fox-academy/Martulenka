@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Webshop search bar</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+    <header th:fragment="header">
+
+        <form action="/search" method="post" class="searchBar">
+            <label for="searchedText">Search for:</label><br>
+            <input id="searchedText" name="searchedText" type="text" placeholder="...something like nike">
+            <button type="submit">Search</button>
+        </form>
+
+    </header>
+
+
+</body>
+</html>

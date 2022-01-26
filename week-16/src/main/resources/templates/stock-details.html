@@ -9,10 +9,11 @@
 
 <header>
   <div th:insert="../static/header :: header"></div>
+  <div th:insert="../static/search-bar :: header"></div>
 </header>
 
 
-  <div th:utext="${stockDetails}"></div>
+  <div id = stockDetails th:utext="${stockDetails}"></div>
 
 
 </body>

@@ -3,7 +3,9 @@ package com.gfa.webshop.controllers;
 import com.gfa.webshop.models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -63,22 +65,28 @@ public class ShopController {
 
     @RequestMapping("/average-stock")
     public String averageStock(Model model){
-        model.addAttribute("stockDetails", "Average stock: " + shopInventory.stream()
+        model.addAttribute("stockDetails", "Average stock: <B>" + shopInventory.stream()
                 .mapToInt(shopItem -> shopItem.getStockQuantity())
                 .average()
-                .orElse(Double.NaN));
+                .orElse(Double.NaN) + "</B>") ;
         return "stock-details";
     }
 
     @RequestMapping("/most-expensive")
     public String mostExpensive(Model model){
-        model.addAttribute("stockDetails", "The most expensive item: " + shopInventory.stream()
+        model.addAttribute("stockDetails", "The most expensive item: <B>" + shopInventory.stream()
                 .filter(shopItem -> shopItem.getStockQuantity() > 0)
                 .max(Comparator.comparing(ShopItem::getPrice))
-                .orElseThrow(NoSuchElementException::new).getName());
+                .orElseThrow(NoSuchElementException::new).getName() + "</B>");
         return "stock-details";
     }
 
-
+    @PostMapping("/search")
+    public String search(Model model, @RequestParam (value = "searchedText", required = false) String searchedText){
+        model.addAttribute("shopItems", shopInventory.stream()
+                .filter(shopItem -> shopItem.getName().toLowerCase().contains(searchedText) || shopItem.getDescription().toLowerCase().contains(searchedText))
+                .collect(Collectors.toList()));
+        return "index";
+    }
 
 }
