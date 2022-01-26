@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Controller
@@ -39,7 +40,7 @@ public class ShopController {
     @RequestMapping("/only-available")
     public String onlyAvailable(Model model){
         model.addAttribute("shopItems", shopInventory.stream()
-                .filter(shopItem -> shopItem.getQuantityInStock()>0)
+                .filter(shopItem -> shopItem.getStockQuantity()>0)
                 .collect(Collectors.toList()));
         return "index";
     }
@@ -59,6 +60,25 @@ public class ShopController {
                 .collect(Collectors.toList()));
         return "index";
     }
+
+    @RequestMapping("/average-stock")
+    public String averageStock(Model model){
+        model.addAttribute("stockDetails", "Average stock: " + shopInventory.stream()
+                .mapToInt(shopItem -> shopItem.getStockQuantity())
+                .average()
+                .orElse(Double.NaN));
+        return "stock-details";
+    }
+
+    @RequestMapping("/most-expensive")
+    public String mostExpensive(Model model){
+        model.addAttribute("stockDetails", "The most expensive item: " + shopInventory.stream()
+                .filter(shopItem -> shopItem.getStockQuantity() > 0)
+                .max(Comparator.comparing(ShopItem::getPrice))
+                .orElseThrow(NoSuchElementException::new).getName());
+        return "stock-details";
+    }
+
 
 
 }
