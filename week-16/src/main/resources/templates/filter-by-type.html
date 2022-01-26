@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Webshop</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+  <header>
+    <div th:insert="../static/header :: header"></div>
+
+    <nav>
+      <ul>
+        <li><a href="filter-by-type-clothes">Clothes and shoes</a></li>
+        <li><a href="filter-by-type-electronics">Electronics</a></li>
+        <li><a href="filter-by-type-snacks">Beverages and snacks</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+
+
+    <table>
+      <thead border="1">
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity of stock</th>
+      </thead>
+
+      <tbody>
+      <tr th:each="item : ${shopItems}">
+        <td th:utext="${item.getName()}"></td>
+        <td th:utext="${item.getDescription()}"></td>
+        <td th:utext="${#numbers.formatDecimal(item.getPrice(), 0, 'COMMA', 2, 'POINT')} + ' Kč'"></td>
+        <td th:utext="${item.getStockQuantity()}"></td>
+      </tr>
+      </tbody>
+    </table>
+
+</body>
+</html>

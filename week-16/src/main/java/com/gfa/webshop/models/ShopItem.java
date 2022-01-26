@@ -13,6 +13,7 @@ public class ShopItem {
     private String description;
     private int price;
     private int stockQuantity;
+    private String type;
 
 
 }
