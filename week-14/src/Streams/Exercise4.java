@@ -2,7 +2,6 @@ package Streams;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.OptionalDouble;
 
 public class Exercise4 {
 
@@ -16,11 +15,12 @@ public class Exercise4 {
         System.out.println(averageOdds(numbers));
     }
 
-    public static OptionalDouble averageOdds(List<Integer> numbers){
+    public static double averageOdds(List<Integer> numbers){
 
         return  numbers.stream()
                 .filter(x -> x%2 != 0)
                 .mapToDouble(a -> a)
-                .average();
+                .average()
+                .orElse(Double.NaN);
     }
 }
