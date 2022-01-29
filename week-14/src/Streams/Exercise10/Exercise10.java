@@ -24,7 +24,7 @@ public class Exercise10 {
         foxes.add(new Fox("Gro","RED",6));
         foxes.add(new Fox("Tove","RED",8));
         foxes.add(new Fox("Liv","RED",6));
-        
+
         System.out.println(foxColorFrequency(foxes));
 
     }
