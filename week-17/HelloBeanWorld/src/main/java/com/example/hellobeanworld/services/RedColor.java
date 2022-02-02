@@ -1,5 +1,7 @@
 package com.example.hellobeanworld.services;
 
+import org.springframework.stereotype.Service;
+
 public class RedColor implements MyColor {
     private String message;
 

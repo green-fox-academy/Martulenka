@@ -1,5 +1,6 @@
 package com.example.hellobeanworld.services;
 
+
 public class GreenColor implements MyColor{
     private String message;
 

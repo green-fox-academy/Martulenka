@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 18px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px 20%;
+}
+
+.home {
+    display: flex;
+}
+
+.myShop {
+    font-size: 30px;
+    color: #00334d;
+    text-decoration: none;
+    font-family: "Helvetica", "Arial", sans-serif;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.more {
+    font-size: 30px;
+    color: #00334d;
+    text-decoration: none;
+    font-family: "Helvetica", "Arial", sans-serif;
+    background-color: white;
+    text-align: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.myShop:hover,.more:hover {
+    background-color: white;
+}
+
+nav {
+   align-self: center;
+}
+
+header li{
+    display: inline;    
+}
+
+a{
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    background-color: #006699;
+    border-radius: 5px;
+    text-transform:uppercase;
+    font-size: 16px;
+}
+
+a:hover{
+    background-color: #00334d;
+}
+
+hr {
+    border: 2px solid #00334d;
+    border-radius:2px;
+    
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60%;
+    
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #00334d;
+    text-align: left;
+    color: white;
+}
+
+.searchBar {
+    overflow: hidden;
+    margin: 10px 20px;
+}
+
+.searchBar input[type=text] {
+    float: left;
+    padding: 10px;
+    border: 1px solid #00334d;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+button {
+    background-color: #006699;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+button:hover{
+    background-color: #00334d;
+}
