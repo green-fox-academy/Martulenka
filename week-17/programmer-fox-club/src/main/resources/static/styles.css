@@ -12,14 +12,6 @@ body {
     margin: 10px 20%;
 }
 
-nav {
-   align-self: center;
-}
-
-header li{
-    display: inline;    
-}
-
 a{
     font-family: "Helvetica", "Arial", sans-serif;
     color: white;
@@ -28,35 +20,12 @@ a{
     text-decoration: none;
     display: inline-block;
     margin: 10px;
-    background-color: #006699;
+    background-color: #000000;
     border-radius: 5px;
     text-transform:uppercase;
     font-size: 16px;
 }
 
 a:hover{
-    background-color: #00334d;
-}
-
-hr {
-    border: 2px solid #00334d;
-    border-radius:2px;
-    
-}
-
-button {
-    background-color: #006699;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-left: 20px;
-}
-
-button:hover{
-    background-color: #00334d;
+    background-color: #333333;
 }

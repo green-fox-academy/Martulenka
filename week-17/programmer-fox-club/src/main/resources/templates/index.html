@@ -7,16 +7,15 @@
 </head>
 <body>
 
+  <img th:src="@{/images/greenfox.png}" height="200" width="200"/>
+  <div id = name th:utext="'This is ' + ${fox.getName()} + '. Currently living on '+ ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.getTrickList().size()} + ' tricks.'"></div>
 
-<img th:src="@{/images/greenfox.png}" height="200" width="200"/>
-<div id = name th:utext="'This is ' + ${fox.getName()} + '. Currently living on '+ ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.getTrickList().size()} + ' tricks.'"></div>
-
-<section th:if= "${fox.getTrickList().size() >0}">
-  <h3>Known tricks</h3>
-  <ul th:each="trick : ${fox.getTrickList()}">
-      <li>trick.getTrickName()</li>
-  </ul>
-</section>
+  <section th:if= "${fox.getTrickList().size() >0}">
+    <h3>Known tricks</h3>
+    <ul th:each="trick : ${fox.getTrickList()}">
+        <li>trick.getTrickName()</li>
+    </ul>
+  </section>
 
 </body>
 </html>
