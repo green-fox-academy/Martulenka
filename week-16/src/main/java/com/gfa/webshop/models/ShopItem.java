@@ -15,5 +15,4 @@ public class ShopItem {
     private int stockQuantity;
     private String type;
 
-
 }
