@@ -29,19 +29,28 @@ public class ToDoController {
         return "todo";
     }
     @GetMapping("/add-todo")
-    public String renderAddUser() {
+    public String renderAddToDo() {
         return "add-todo";
     }
     @PostMapping("/add-todo")
-    public String addUser(@ModelAttribute ToDo toDo) {
+    public String addToDo(@ModelAttribute ToDo toDo) {
         toDoService.save(toDo);
         return "redirect:/list";
     }
 
     @GetMapping("/remove/{id}")
-    public String removeUser(@PathVariable Long id) {
+    public String removeToDo(@PathVariable Long id) {
         toDoService.removeToDo(id);
         return "redirect:/list";
     }
 
+    @GetMapping("/{id}/edit")
+    public String editToDo() {
+        return "edit-todo";
+    }
+    @PostMapping("/{id}/edit")
+    public String editToDo(@ModelAttribute ToDo toDo) {
+
+        return "redirect:/list";
+    }
 }
