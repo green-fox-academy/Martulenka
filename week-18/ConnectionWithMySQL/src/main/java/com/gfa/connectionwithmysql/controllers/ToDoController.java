@@ -38,5 +38,10 @@ public class ToDoController {
         return "redirect:/list";
     }
 
+    @GetMapping("/remove/{id}")
+    public String removeUser(@PathVariable Long id) {
+        toDoService.removeToDo(id);
+        return "redirect:/list";
+    }
 
 }
