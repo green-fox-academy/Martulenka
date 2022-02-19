@@ -1,7 +1,7 @@
-package com.example.listingtodoswithh2.controllers;
+package com.gfa.connectionwithmysql.controllers;
 
-import com.example.listingtodoswithh2.models.ToDo;
-import com.example.listingtodoswithh2.services.ToDoService;
+import com.gfa.connectionwithmysql.models.ToDo;
+import com.gfa.connectionwithmysql.services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
