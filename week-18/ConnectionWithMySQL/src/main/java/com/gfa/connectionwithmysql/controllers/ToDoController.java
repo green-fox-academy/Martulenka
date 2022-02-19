@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class ToDoController {
@@ -30,8 +31,9 @@ public class ToDoController {
 
     @RequestMapping(value="/list", method= RequestMethod.GET)
     public String list(Model model) {
-        toDoService.save();
-        List<ToDo> toDoList = toDoService.getAllToDos();
+        List<ToDo> toDoList = toDoService.getAllToDos().stream()
+                .filter(toDo -> !toDo.isDone())
+                .collect(Collectors.toList());
         model.addAttribute("toDoList", toDoList);
         return "todo";
     }
