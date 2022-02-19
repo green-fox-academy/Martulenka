@@ -8,5 +8,5 @@ public interface ToDoService{
 
     List<ToDo> getAllToDos();
 
-    void save();
+    void save(ToDo toDo);
 }

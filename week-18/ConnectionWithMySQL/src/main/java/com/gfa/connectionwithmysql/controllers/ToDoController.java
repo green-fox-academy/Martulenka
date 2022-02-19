@@ -5,8 +5,7 @@ import com.gfa.connectionwithmysql.services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,14 +20,6 @@ public class ToDoController {
         this.toDoService = toDoService;
     }
 
-    /*
-    @RequestMapping(value="/list", method= RequestMethod.GET)
-    @ResponseBody
-    public String list() {
-        return "This is my first Todo";
-    }
-    */
-
     @RequestMapping(value="/list", method= RequestMethod.GET)
     public String list(Model model) {
         List<ToDo> toDoList = toDoService.getAllToDos().stream()
@@ -37,5 +28,15 @@ public class ToDoController {
         model.addAttribute("toDoList", toDoList);
         return "todo";
     }
+    @GetMapping("/add-todo")
+    public String renderAddUser() {
+        return "add-todo";
+    }
+    @PostMapping("/add-todo")
+    public String addUser(@ModelAttribute ToDo toDo) {
+        toDoService.save(toDo);
+        return "redirect:/list";
+    }
+
 
 }
