@@ -1,13 +1,16 @@
 package com.gfa.connectionwithmysql.controllers;
 
 import com.gfa.connectionwithmysql.models.ToDo;
+import com.gfa.connectionwithmysql.repositories.ToDoRepository;
 import com.gfa.connectionwithmysql.services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -45,12 +48,28 @@ public class ToDoController {
     }
 
     @GetMapping("/{id}/edit")
-    public String editToDo() {
+    public String editToDo(@PathVariable Long id, Model model) {
+
+        ToDo todoById = null;
+        for(ToDo todo : toDoService.getAllToDos()){
+            if (todo.getId() == id) {
+                todoById = todo;
+            }
+        }
+        //Optional todoById = toDoService.getAllToDos().stream().filter(toDo -> toDo.getId()==id).findFirst();
+
+        model.addAttribute("todo", todoById);
+
         return "edit-todo";
     }
+
     @PostMapping("/{id}/edit")
-    public String editToDo(@ModelAttribute ToDo toDo) {
+    public String editToDo(@PathVariable long id, ToDo todo) {
+
+        toDoService.save(todo);
 
         return "redirect:/list";
     }
+
+
 }
