@@ -14,19 +14,10 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class ToDo {
+public class Assignee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String title;
-    private boolean urgent;
-    private boolean done;
-    //private Assignee assignee;
-
-    public ToDo(String title){
-        this.title = title;
-        this.urgent = false;
-        this.done = false;
-    }
-
+    private String name;
+    private String email;
 }

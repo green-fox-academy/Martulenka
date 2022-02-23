@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Connection With My SQL</title>
+  <title>Todo App</title>
   <meta charset="utf-8" />
 </head>
 <body>
 
     <h1>Todos for today</h1>
-    <a href="/add-todo">Add new todo</a>
+
+    <a href="/assignees">List of Assignees</a><br>
+
+    <a href="/add-todo">Add new todo</a><br><br>
+
+    <form action="/search" method="post" class="searchBar">
+        <label for="searchedText">Search for:</label><br>
+        <input id="searchedText" name="searchedText" type="text" placeholder="whatever you are looking for">
+        <button type="submit">Search</button>
+    </form>
+
+
     <table th:unless="${toDoList.size() == 0}">
         <thead>
         <tr>
@@ -19,12 +30,12 @@
         </thead>
         <tbody>
         <tr th:each="toDo : ${toDoList}" th:object="${toDo}">
-            <td th:text="*{id}"></td>
+            <td th:text="*{getId}"></td>
             <td th:text="*{title}"></td>
             <td th:text="*{urgent}"></td>
             <td th:text="*{done}"></td>
-            <td><a th:href="@{|/remove/*{id}|}">delete</a></td>
-            <td><a th:href="@{|/*{id}/edit|}">edit</a></td>
+            <td><a th:href="@{|/remove/*{getId}|}">delete</a></td>
+            <td><a th:href="@{|/*{getId}/edit|}">edit</a></td>
         </tr>
         </tbody>
     </table>
