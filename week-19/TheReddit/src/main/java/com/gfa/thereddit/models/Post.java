@@ -28,4 +28,5 @@ public class Post {
      this.postLink = postLink;
      this.postScore = 0;
     }
+
 }

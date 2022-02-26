@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Not That Reddit</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<h1>Add new post</h1>
+
+<form action="/add-post" method="post">
+  <label>Title:
+    <input type="text" name="postTitle">
+  </label><br>
+  <label>Link:
+    <input type="url" name="postLink">
+  </label><br>
+  <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>

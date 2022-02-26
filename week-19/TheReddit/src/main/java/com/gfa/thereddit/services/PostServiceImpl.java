@@ -32,4 +32,25 @@ public class PostServiceImpl implements PostService{
         postRepository.deleteById(id);
     }
 
+    @Override
+    public Post upvote(long postId) {
+        Post post = postRepository.findById(postId)
+                .orElse(null);
+
+        post.setPostScore(post.getPostScore() + 1);
+
+        return postRepository.save(post);
+    }
+
+    @Override
+    public Post downvote(long postId) {
+        Post post = postRepository.findById(postId)
+                .orElse(null);
+
+        post.setPostScore(post.getPostScore() - 1);
+
+        return postRepository.save(post);
+    }
+
+
 }

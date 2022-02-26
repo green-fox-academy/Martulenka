@@ -12,4 +12,8 @@ public interface PostService {
 
     void removePost(Long id);
 
+    Post upvote(long postId);
+
+    Post downvote(long postId);
+
 }
