@@ -1,0 +1,32 @@
+package com.gfa.thereddit.controllers;
+
+import com.gfa.thereddit.models.Post;
+import com.gfa.thereddit.services.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
+
+@Controller
+public class PostController {
+
+    private PostService postService;
+
+    @Autowired
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
+
+
+
+    @RequestMapping(value="/", method= RequestMethod.GET)
+    public String list(Model model) {
+        List<Post> postList = postService.getAllPosts();
+        model.addAttribute("postList", postList);
+        return "index";
+    }
+
+}

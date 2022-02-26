@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Not That Reddit</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+<h1>Not That Reddit</h1>
+
+<a href="/add-todo">Add new post</a><br><br>
+
+<table th:unless="${postList.size() == 0}">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Score</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="post : ${postList}" th:object="${post}">
+            <td th:text="*{postId}"></td>
+            <td th:text="*{postScore}"></td>
+            <td th:text="*{postTitle}"></td>
+            <td><a th:href="*{postLink}" th:text="*{postTitle}"></a></td>
+        </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
