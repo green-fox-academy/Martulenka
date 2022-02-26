@@ -23,7 +23,7 @@ public class Post {
     private String postLink;
     private long postScore;
 
-    public Post(String postTitle, String postLink){
+    public Post (String postTitle, String postLink){
      this.postTitle = postTitle;
      this.postLink = postLink;
      this.postScore = 0;

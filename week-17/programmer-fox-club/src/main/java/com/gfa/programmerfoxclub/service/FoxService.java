@@ -8,6 +8,6 @@ public interface FoxService {
 
     List<Fox> getAllFoxes();
     void addFox(Fox fox);
-    void removeFox(String name);
+    void removeFox(Long id);
     Fox getFox(String name);
 }

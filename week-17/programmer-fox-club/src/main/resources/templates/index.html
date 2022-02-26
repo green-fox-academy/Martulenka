@@ -7,10 +7,19 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="@{|/info/*{fox.getName()}|}">Information</a></li>
+      <li><a th:href="@{|/nutritionStore/*{fox.getName()}|}">Nutrition Store</a></li>
+      <li><a href="/trickCenter">Trick Center</a></li>
+      <li><a href="/actionHistory">Action History</a></li>
+    </ul>
+  </nav>
+
   <img th:src="@{/images/greenfox.png}" height="200" width="200"/>
   <div id = name th:utext="'This is ' + ${fox.getName()} + '. Currently living on '+ ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.getTrickList().size()} + ' tricks.'"></div>
 
-  <section th:if= "${fox.getTrickList().size() >0}">
+  <section th:unless="${fox.getTrickList().size() == 0}">
     <h3>Known tricks</h3>
     <ul th:each="trick : ${fox.getTrickList()}">
         <li>trick.getTrickName()</li>

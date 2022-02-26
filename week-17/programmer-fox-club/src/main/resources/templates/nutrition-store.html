@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Programmer Fox Club</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="@{|/info/*{fox.getName()}|}">Information</a></li>
+        <li><a th:href="@{|/nutritionStore/*{fox.getName()}|}">Nutrition Store</a></li>
+        <li><a href="/trickCenter">Trick Center</a></li>
+        <li><a href="/actionHistory">Action History</a></li>
+    </ul>
+</nav>
+
+
+
+    <form th:action="@{|/nutritionStore/*{fox.getName()}|}" method="post">
+        <label>Food:
+            <select id="foodType">
+                <option name="drinkType" th:each="foodType : ${foodTypes}" th:object="${foodType}" th:value="${foodType}" th:text="${foodType}"></option>
+            </select>
+        </label><br>
+        <label>Drink
+            <select id="drinkType">
+                <option  name="drinkType" th:each="drinkType : ${drinkTypes}" th:object="${drinkType}" th:value="${drinkType}" th:text="${drinkType}"></option>
+            </select>
+        </label><br>
+        <button type="submit">Change</button>
+    </form>
+
+
+
+</body>
+</html>

@@ -10,8 +10,6 @@ public interface PostService {
 
     void save(Post post);
 
-    void removePost(Long id);
-
     Post upvote(long postId);
 
     Post downvote(long postId);

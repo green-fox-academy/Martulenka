@@ -28,11 +28,6 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public void removePost(Long id) {
-        postRepository.deleteById(id);
-    }
-
-    @Override
     public Post upvote(long postId) {
         Post post = postRepository.findById(postId)
                 .orElse(null);
