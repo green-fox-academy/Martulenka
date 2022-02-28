@@ -21,7 +21,7 @@ public class PostController {
 
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String list(Model model) {
-        List<Post> postList = postService.getAllPosts();
+        List<Post> postList = postService.sortByScoreDesc();
         model.addAttribute("postList", postList);
         return "index";
     }
@@ -32,8 +32,8 @@ public class PostController {
     }
 
     @PostMapping("/add-post")
-    public String addPost(@ModelAttribute Post post) {
-        postService.save(post);
+    public String addPost(@ModelAttribute(value = "postTitle") String title, @ModelAttribute(value = "postLink") String link) {
+        postService.save(new Post(title, link));
         return "redirect:/";
     }
 

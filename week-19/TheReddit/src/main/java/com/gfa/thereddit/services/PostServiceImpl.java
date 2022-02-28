@@ -19,7 +19,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public List<Post> getAllPosts(){
-        return (List<Post>) postRepository.findAll();
+        return postRepository.findAll();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PostServiceImpl implements PostService{
         Post post = postRepository.findById(postId)
                 .orElse(null);
 
-        post.setPostScore(post.getPostScore() + 1);
+        post.changeScore(1);
 
         return postRepository.save(post);
     }
@@ -42,10 +42,14 @@ public class PostServiceImpl implements PostService{
         Post post = postRepository.findById(postId)
                 .orElse(null);
 
-        post.setPostScore(post.getPostScore() - 1);
+        post.changeScore(-1);
 
         return postRepository.save(post);
     }
 
+    @Override
+    public List<Post> sortByScoreDesc(){
+        return postRepository.findByOrderByPostScoreDesc();
+    }
 
 }

@@ -14,4 +14,6 @@ public interface PostService {
 
     Post downvote(long postId);
 
+    List<Post> sortByScoreDesc();
+
 }

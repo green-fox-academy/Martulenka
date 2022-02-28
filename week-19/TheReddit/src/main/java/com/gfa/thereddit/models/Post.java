@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -22,11 +20,17 @@ public class Post {
     private String postTitle;
     private String postLink;
     private long postScore;
+    private LocalDate postDate;
 
     public Post (String postTitle, String postLink){
      this.postTitle = postTitle;
      this.postLink = postLink;
      this.postScore = 0;
+     this.postDate = LocalDate.now();
+    }
+
+    public void changeScore(int changeAmount){
+        postScore += changeAmount;
     }
 
 }
