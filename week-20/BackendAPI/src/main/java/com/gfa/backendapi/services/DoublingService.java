@@ -5,6 +5,7 @@ import com.gfa.backendapi.models.ErrorMessage;
 
 public interface DoublingService {
 
-    Doubling getDoubling(int input);
+    Doubling addDoubling(int input);
+
     ErrorMessage getError();
 }

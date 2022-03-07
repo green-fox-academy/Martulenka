@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class GreeterServiceImpl implements GreeterService {
 
     @Override
-    public Greeter getGreeter(String name, String title) {
+    public Greeter addGreeter(String name, String title) {
         return new Greeter(name, title);
     }
 
@@ -17,8 +17,11 @@ public class GreeterServiceImpl implements GreeterService {
         if (name == null && title == null) {
             return new ErrorMessage("Please provide a name and a title!");
         }
-        else if (name != null && title == null) {
+        else if (title == null) {
             return new ErrorMessage("Please provide a title!");
+        }
+        else if (name == null) {
+            return new ErrorMessage("Please provide a name!");
         }
         return new ErrorMessage();
     }

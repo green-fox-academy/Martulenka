@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 public class DoublingServiceImpl implements DoublingService {
 
     @Override
-    public Doubling getDoubling(int input) {
-        return new Doubling(input);
+    public Doubling addDoubling(int input) {
+        return new Doubling(input, input*2);
     }
 
     @Override

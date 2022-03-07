@@ -14,8 +14,8 @@ public class Greeter {
     private String welcome_message;
 
     public Greeter(String name, String title) {
-        this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
         this.name = name;
         this.title = title;
+        this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
     }
 }

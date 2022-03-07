@@ -5,6 +5,6 @@ import com.gfa.backendapi.models.Greeter;
 
 public interface GreeterService {
 
-    Greeter getGreeter(String name, String title);
+    Greeter addGreeter(String name, String title);
     ErrorMessage getError(String name, String title);
 }

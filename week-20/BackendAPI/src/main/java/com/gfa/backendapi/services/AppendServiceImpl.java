@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class AppendServiceImpl implements AppendService {
 
     @Override
-    public Append addA(String appended) {
-        return new Append(appended + "a");
+    public Append addA(String toAppend) {
+        return new Append(toAppend + "a");
     }
 }

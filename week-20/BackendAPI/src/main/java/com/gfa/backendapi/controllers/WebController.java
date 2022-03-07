@@ -1,5 +1,6 @@
 package com.gfa.backendapi.controllers;
 
+import com.gfa.backendapi.models.DoUntil;
 import com.gfa.backendapi.services.AppendService;
 import com.gfa.backendapi.services.DoUntilService;
 import com.gfa.backendapi.services.DoublingService;
@@ -28,10 +29,10 @@ public class WebController {
     @GetMapping(value = {"/doubling"})
     public ResponseEntity<?> getDoubling(@RequestParam(value = "input", required = false) Integer input) {
         if (input != null) {
-            return new ResponseEntity<>(doublingService.getDoubling(input), HttpStatus.OK);
+            return new ResponseEntity<>(doublingService.addDoubling(input), HttpStatus.OK);
         }
         else {
-            return new ResponseEntity<>(doublingService.getError(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(doublingService.getError(), HttpStatus.OK);
         }
     }
 
@@ -39,17 +40,17 @@ public class WebController {
     public ResponseEntity<?> getGreeter(@RequestParam(value = "name", required = false) String name,
                                         @RequestParam(value = "title", required = false) String title) {
         if (name != null && title != null) {
-            return new ResponseEntity<>(greeterService.getGreeter(name, title), HttpStatus.OK);
+            return new ResponseEntity<>(greeterService.addGreeter(name, title), HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(greeterService.getError(name, title), HttpStatus.BAD_REQUEST);
         }
     }
 
-    @GetMapping(value = {"/appenda/{appendable}"})
-    public ResponseEntity<?> getAppend(@PathVariable(required = false) String appendable) {
-        if (appendable != null) {
-            return new ResponseEntity<>(appendService.addA(appendable), HttpStatus.OK);
+    @GetMapping(value = {"/appenda/{toAppend}"})
+    public ResponseEntity<?> getAppend(@PathVariable(required = false) String toAppend) {
+        if (toAppend != null) {
+            return new ResponseEntity<>(appendService.addA(toAppend), HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -57,9 +58,10 @@ public class WebController {
     }
 
     @PostMapping(value = {"/dountil/sum"})
-    public ResponseEntity<?> getSum(@RequestParam(value = "input", required = false) Integer input) {
-        if (input != null) {
-                return new ResponseEntity<>(doUntilService.getResult(input, "sum"), HttpStatus.OK);
+    public ResponseEntity<?> postSum(@RequestBody DoUntil doUntil) {
+        if (doUntil != null) {
+            doUntil.setResult(doUntilService.getSumUntil(doUntil.getUntil()));
+            return new ResponseEntity<>(doUntil, HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(doUntilService.getError(), HttpStatus.BAD_REQUEST);
@@ -67,9 +69,10 @@ public class WebController {
     }
 
     @PostMapping(value = {"/dountil/factor"})
-    public ResponseEntity<?> getFactor(@RequestParam(value = "input", required = false) Integer input) {
-        if (input != null) {
-            return new ResponseEntity<>(doUntilService.getResult(input, "factor"), HttpStatus.OK);
+    public ResponseEntity<?> postFactor(@RequestBody DoUntil doUntil) {
+        if (doUntil != null) {
+            doUntil.setResult(doUntilService.getFactor(doUntil.getUntil()));
+            return new ResponseEntity<>(doUntil, HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(doUntilService.getError(), HttpStatus.BAD_REQUEST);

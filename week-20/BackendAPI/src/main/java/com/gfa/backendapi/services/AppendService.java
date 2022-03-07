@@ -4,5 +4,5 @@ import com.gfa.backendapi.models.Append;
 
 public interface AppendService {
 
-    Append addA(String appended);
+    Append addA(String toAppend);
 }
