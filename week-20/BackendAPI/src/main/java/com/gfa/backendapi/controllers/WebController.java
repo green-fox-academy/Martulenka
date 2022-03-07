@@ -1,10 +1,8 @@
 package com.gfa.backendapi.controllers;
 
+import com.gfa.backendapi.models.ArrayHandler;
 import com.gfa.backendapi.models.DoUntil;
-import com.gfa.backendapi.services.AppendService;
-import com.gfa.backendapi.services.DoUntilService;
-import com.gfa.backendapi.services.DoublingService;
-import com.gfa.backendapi.services.GreeterService;
+import com.gfa.backendapi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +15,7 @@ public class WebController {
     private GreeterService greeterService;
     private AppendService appendService;
     private DoUntilService doUntilService;
+    private ArrayHandlerService arrayHandlerService;
 
     @Autowired
     public WebController(DoublingService doublingService, GreeterService greeterService, AppendService appendService, DoUntilService doUntilService) {
@@ -78,4 +77,22 @@ public class WebController {
             return new ResponseEntity<>(doUntilService.getError(), HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PostMapping(value = {"/arrays"})
+    public ResponseEntity<?> postArrays(@RequestBody ArrayHandler arrayHandler) {
+        if (arrayHandler.getWhat() != null && arrayHandler.getNumbers() != null) {
+            if(arrayHandler.getWhat() == "double"){
+
+                return new ResponseEntity<>(arrayHandlerService.getResultList(arrayHandler), HttpStatus.OK);
+            }else {
+                return new ResponseEntity<>(arrayHandlerService.getResultInteger(arrayHandler), HttpStatus.OK);
+            }
+
+        }
+        else {
+            return new ResponseEntity<>(arrayHandlerService.getError(arrayHandler.getWhat(), arrayHandler.getNumbers()), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+
 }
