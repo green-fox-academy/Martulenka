@@ -17,9 +17,9 @@ public class ArrayHandlerServiceImpl implements ArrayHandlerService{
 
     @Override
     public Integer getResultInteger(ArrayHandler arrayHandler){
-        if(arrayHandler.getWhat() == "sum"){
+        if(arrayHandler.getWhat().contains("sum") ){
             return arrayHandler.getNumbers().stream().mapToInt(Integer::intValue).sum();
-        }else if(arrayHandler.getWhat() == "multiply"){
+        }else if(arrayHandler.getWhat().contains("multiply")){
             return arrayHandler.getNumbers().stream().reduce(1, (a, b) -> a * b);
         }else{
             return null;

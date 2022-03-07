@@ -18,11 +18,12 @@ public class WebController {
     private ArrayHandlerService arrayHandlerService;
 
     @Autowired
-    public WebController(DoublingService doublingService, GreeterService greeterService, AppendService appendService, DoUntilService doUntilService) {
+    public WebController(DoublingService doublingService, GreeterService greeterService, AppendService appendService, DoUntilService doUntilService, ArrayHandlerService arrayHandlerService) {
         this.doublingService = doublingService;
         this.greeterService = greeterService;
         this.appendService = appendService;
         this.doUntilService = doUntilService;
+        this.arrayHandlerService = arrayHandlerService;
     }
 
     @GetMapping(value = {"/doubling"})
@@ -81,7 +82,7 @@ public class WebController {
     @PostMapping(value = {"/arrays"})
     public ResponseEntity<?> postArrays(@RequestBody ArrayHandler arrayHandler) {
         if (arrayHandler.getWhat() != null && arrayHandler.getNumbers() != null) {
-            if(arrayHandler.getWhat() == "double"){
+            if(arrayHandler.getWhat().contains("double")){
 
                 return new ResponseEntity<>(arrayHandlerService.getResultList(arrayHandler), HttpStatus.OK);
             }else {
